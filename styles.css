@@ -1,0 +1,229 @@
+
+
+:root {
+    --utdorange: #E87500;
+    --utdgreen: #185844;
+    --white: #FFFFFF;
+    --hoverorange: #FFA03F;
+    --road: #505050
+}
+html, body {
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--utdgreen);
+    /* overflow-x: hidden; */
+    font-family: 'Science Gothic', sans-serif;
+}
+.title {
+  position: absolute;
+  left: 37%;
+  top: 25%;
+    transform: rotate(-17deg);
+  display: inline-block;
+  font-family: "Science Gothic", sans-serif;
+  font-size: 4.3rem;
+  font-weight: 700;
+  line-height: 1.066;
+  margin: 0;
+
+}
+
+.comet-block {
+  position: absolute;
+  top: -3vw;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.title-outline,
+.title-fill {
+  display: block;
+}
+
+.title-outline {
+  color: var(--utdorange);
+  -webkit-text-stroke: 10px var(--utdorange);
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.title-fill {
+  position: absolute;
+  inset: 0;
+  color: #fff;
+}
+
+.comet-image{
+    position: absolute;
+    top: -5vw;
+   left: 50%;
+   transform: translateX(-50%);
+    width: 40vw;
+}
+.concrete {
+    background-color: var(--road);
+    height: 30vh;
+    position: relative;
+    margin-top: auto;
+}
+
+.concrete-image {
+    position: absolute;
+    bottom: 50%;
+    left: 0;
+    width: 100%;
+    height: 30vh;
+}
+.temoc-image {
+    position: absolute;
+    bottom: 0%;
+    width: 20%;
+    left: 39%;
+    z-index: 3;
+}
+
+.tree-image {
+    position: absolute;
+    bottom: 20%;
+    left:85%;
+}
+
+.tree-image2 {
+    position: absolute;
+    bottom: 20%;
+    left: 6%;
+}
+.building-image {
+    position: absolute;
+    bottom: 0%;
+    left:0vw;
+    transform: translateX(-50%);
+    bottom:8vw;
+    transform: scaleX(-1);
+}
+.building-image2 {
+    position: absolute;
+    bottom: 0%;
+    right: 0vw;
+    bottom:8vw;
+}
+
+
+
+.white-border {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 300px;
+    height: 55px;
+
+    border: 10px solid white;
+}
+
+.bottom-cta {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    color: #fff;
+    font-weight: 300;
+}
+button{
+    background-color: var(--utdorange);
+    border: none;
+    color: var(--white);
+    padding: 10px 20px;
+    font-family: "science gothic", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 0.3rem;
+    align-self: center;
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+    .comet-block {
+        transform: translateY(-3vh);
+    }
+
+    .comet-image {
+        top: -2vh;
+        width: 100vw;
+    }
+
+    .title {
+        left: 50%;
+        top: 30%;
+        width: max-content;
+        font-size: clamp(2.6rem, 14vw, 4.3rem);
+        text-align: center;
+        transform: translateX(-50%) rotate(-17deg);
+    }
+
+    .title-outline {
+        -webkit-text-stroke-width: 7px;
+    }
+
+    .concrete {
+        height: 25vh;
+    }
+
+    .concrete-image {
+        height: 25vh;
+    }
+
+    .temoc-image {
+        width: 55%;
+        left: 23%;
+        z-index: 3;
+    }
+
+    .building-image,
+    .building-image2 {
+        width: 42vw;
+        z-index: 1;
+    }
+
+    .tree-image,
+    .tree-image2 {
+        width: 22vw;
+        z-index: 2;
+    }
+
+    .white-border {
+        width: 70%;
+        height: 45px;
+        border-width: 8px;
+        z-index: 2;
+    }
+
+    .bottom-cta {
+        width: 90%;
+        z-index: 4;
+        gap: 1.25rem;
+    }
+
+    .bottom-cta p {
+        margin: 0;
+        text-align: center;
+    }
+
+    button {
+        width: 80%;
+    }
+}
