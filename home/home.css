@@ -24,6 +24,35 @@ body {
 	font-family: "Science Gothic", sans-serif;
 }
 
+.home-loading {
+	position: fixed;
+	inset: 0;
+	z-index: 10;
+	display: grid;
+	place-items: center;
+	background: var(--home-green);
+}
+
+.home-loading-content {
+	display: grid;
+	justify-items: center;
+	gap: 12px;
+}
+
+.home-loading[hidden] {
+	display: none;
+}
+
+.home-loading-image {
+	width: min(42vw, 260px);
+}
+
+.home-loading-content p {
+	margin: 0;
+	color: var(--home-white);
+	font-size: 1.4rem;
+}
+
 button,
 select {
 	font: inherit;
@@ -34,9 +63,13 @@ select {
 	position: relative;
 	left: auto;
 	top: auto;
+	flex: 1 1 auto;
+	min-width: 0;
 	margin: 0;
 	transform: rotate(0deg);
-	font-size: clamp(2rem, 7vw, 2.625rem);
+	font-size: clamp(1.8rem, 7vw, 2.625rem);
+	line-height: 1;
+	white-space: nowrap;
 }
 .home-page {
 	background: var(--utdgreen);
@@ -45,14 +78,15 @@ select {
 .home-header {
 	position: relative;
 	display: flex;
-	align-items: flex-start;
-	justify-content: flex-end;
-	height: 7vw;
-	padding-top: 3%;
-	padding-right: 5%;
-	padding-left: 5%;
-	padding-bottom: 5%;
+	align-items: center;
+	justify-content: space-between;
+	min-height: 82px;
+	padding: 12px clamp(14px, 5vw, 34px);
 	border-bottom: 10px solid var(--utdorange);
+}
+
+.home-header .title-outline {
+	-webkit-text-stroke-width: 6px;
 }
 
 .dropdown {
@@ -61,12 +95,33 @@ select {
 }
 
 .dropdown-toggle {
+	padding: 0;
 	border: 0;
 	background: transparent;
 	color: var(--home-orange);
 	font-size: 2.4rem;
 	line-height: 1;
 	cursor: pointer;
+}
+
+@media (max-width: 420px) {
+	.home-header {
+		min-height: 72px;
+		padding-block: 9px;
+		border-bottom-width: 7px;
+	}
+
+	.title {
+		font-size: clamp(1.55rem, 9vw, 2rem);
+	}
+
+	.home-header .title-outline {
+		-webkit-text-stroke-width: 4px;
+	}
+
+	.dropdown-toggle {
+		font-size: 2rem;
+	}
 }
 
 .dropdown-menu {
@@ -96,7 +151,6 @@ select {
 	text-align: left;
 	cursor: pointer;
 }
-
 .brand {
 	color: var(--home-white);
 	font-size: clamp(2rem, 7vw, 2.625rem);
@@ -354,12 +408,27 @@ select {
 	position: fixed;
 	z-index: 20;
 	inset: 0;
+	display: grid;
+	place-items: center;
 	pointer-events: none;
 	overflow: hidden;
 	opacity: 0;
 }
 
 .celebration.is-visible { opacity: 1; }
+
+.celebration p {
+	position: relative;
+	z-index: 1;
+	margin: 0;
+	padding: 18px 24px;
+	border-radius: 12px;
+	background: var(--home-white);
+	color: var(--home-green);
+	font-size: clamp(1.3rem, 5vw, 2rem);
+	font-weight: 700;
+	text-align: center;
+}
 
 .celebration span {
 	position: absolute;

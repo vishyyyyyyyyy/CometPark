@@ -12,6 +12,8 @@ const dropdownToggle = document.querySelector('.dropdown-toggle');
 const dropdownMenu = document.querySelector('.dropdown-menu');
 const preferencesButton = document.querySelector('.preferences-button');
 const arrivalButtons = document.querySelectorAll('.arrival-tabs button');
+const homeLoading = document.querySelector('.home-loading');
+const homeLoadingImage = document.querySelector('.home-loading-image');
 let parkingAvailability = {};
 let selectedTimeSlot = document.querySelector('.arrival-tabs .is-active').textContent.trim();
 let activeFeedback = null;
@@ -19,8 +21,33 @@ let activeFeedback = null;
 const feedbackStorageKey = 'cometParkLotFeedback';
 const savedFeedback = JSON.parse(localStorage.getItem(feedbackStorageKey) || '[]');
 
+const loadingFromOnboarding = sessionStorage.getItem('cometParkLoadingFromOnboarding') === 'true';
+const temocFrames = ['../assets/temoc1.png', '../assets/temoc2.png'];
+let temocFrameIndex = 0;
+let temocAnimation;
+
+if (loadingFromOnboarding) {
+  homeLoading.hidden = false;
+  temocAnimation = window.setInterval(() => {
+    temocFrameIndex = (temocFrameIndex + 1) % temocFrames.length;
+    homeLoadingImage.src = temocFrames[temocFrameIndex];
+  }, 500);
+  sessionStorage.removeItem('cometParkLoadingFromOnboarding');
+}
+
+function finishHomeLoading() {
+  if (!loadingFromOnboarding) return;
+
+  window.clearInterval(temocAnimation);
+  homeLoading.hidden = true;
+}
+
 const observedAvailability = {
   '8-10': {
+    'Lot H': {
+      gold: { availability: 'moderate', note: 'A couple of Gold spots may be available' },
+      orange: { availability: 'high', note: 'lots of spots available!!' }
+    },
     'Visitor Center': { availability: 'low', note: 'Usually full around this time' },
     'Lot A': {
       gold: { availability: 'high', note: 'About 70% Gold availability reported' },
@@ -28,7 +55,8 @@ const observedAvailability = {
       orange: { availability: 'moderate', note: 'About 40% Orange availability reported' }
     }
   },
-  '10-12': {},
+  '10-12': {
+  },
   '12-2': {
     'Lot H': { availability: 'low', note: 'Mostly full, but turnover may open a spot around lunch' },
     'Lot A': { availability: 'moderate', note: 'Mid turnover with a good amount of Orange availability' }
@@ -232,10 +260,19 @@ feedbackBackdrop.addEventListener('click', (event) => {
 
 document.querySelectorAll('[data-feedback="parked-yes"], [data-feedback="parked-no"]').forEach((button) => {
     button.addEventListener('click', () => {
+    const parked = button.dataset.feedback === 'parked-yes';
+
     if (activeFeedback) {
-      savedFeedback.push({ ...activeFeedback, parked: button.dataset.feedback === 'parked-yes' });
+      savedFeedback.push({ ...activeFeedback, parked });
       localStorage.setItem(feedbackStorageKey, JSON.stringify(savedFeedback));
     }
+
+    if (!parked) {
+      closeFeedback();
+      showCelebration();
+      return;
+    }
+
         easeQuestion.hidden = false;
     });
 });
@@ -248,7 +285,10 @@ document.querySelectorAll('[data-feedback^="easy-"]').forEach((button) => {
 });
 
 lotPicker.addEventListener('change', () => {
-    if (lotPicker.value) openFeedback(lotPicker.value);
+  if (lotPicker.value) {
+    window.open(mapsUrl(lotPicker.value), '_blank', 'noopener,noreferrer');
+    openFeedback(lotPicker.value);
+  }
 });
 
 const pageToScrape =
@@ -344,6 +384,7 @@ async function getParkingData() {
     console.error("Error getting parking data:", error);
   } finally {
     renderSpots();
+    finishHomeLoading();
   }
 }
 

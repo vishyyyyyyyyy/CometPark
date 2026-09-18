@@ -116,5 +116,6 @@ nextButton.addEventListener('click', () => {
         permit: selectedPermit,
         parkingChoices
     }));
+    sessionStorage.setItem('cometParkLoadingFromOnboarding', 'true');
     window.location.href = '../home/home.html';
 });
