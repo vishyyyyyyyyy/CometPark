@@ -2,7 +2,9 @@ const questionOne = document.querySelector('.question-one');
 const questionTwo = document.querySelector('.question-two');
 const permitChoices = document.querySelectorAll('.permit-choice');
 const backButton = document.querySelector('.back-button');
+const nextButton = document.querySelector('.next-button');
 const locationList = document.querySelector('.location-list');
+let selectedPermit = '';
 
 const lotPermits = [
     ['PS1', ['Pay by space', 'Purple', 'Orange', 'Gold']],
@@ -88,6 +90,7 @@ function renderLocations(selectedPermit) {
 }
 
 function showQuestionTwo(event) {
+    selectedPermit = event.currentTarget.dataset.permit;
     renderLocations(event.currentTarget.dataset.permit);
     questionOne.hidden = true;
     questionTwo.hidden = false;
@@ -102,4 +105,16 @@ backButton.addEventListener('click', () => {
     questionTwo.hidden = true;
     questionOne.hidden = false;
     window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+nextButton.addEventListener('click', () => {
+    const parkingChoices = Array.from(locationList.querySelectorAll('select'))
+        .map((select) => select.value)
+        .filter(Boolean);
+
+    localStorage.setItem('cometParkPreferences', JSON.stringify({
+        permit: selectedPermit,
+        parkingChoices
+    }));
+    window.location.href = '../home/home.html';
 });

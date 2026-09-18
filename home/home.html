@@ -1,0 +1,74 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMET PARK | HOME</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Science+Gothic:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="home.css">
+</head>
+
+
+<body>
+    <main class="home-page">
+        <header class="home-header">
+            <a class="brand" href="../index.html">CometPark</a>
+        </header>
+
+        <section class="arrival-section" aria-labelledby="arrival-title">
+            <h1 id="arrival-title">When will you<br>arrive on campus?</h1>
+            <div class="arrival-tabs" role="group" aria-label="Arrival time">
+                <button type="button">8-10</button>
+                <button type="button" class="is-active">10-12</button>
+                <button type="button">12-2</button>
+                <button type="button">2-4</button>
+            </div>
+        </section>
+
+        <section class="recommendation-section" aria-labelledby="top-spots-title">
+            <h2 id="top-spots-title" class="visually-hidden">Top parking spots</h2>
+            <div id="top-spots" class="spot-list"></div>
+        </section>
+
+        <section class="alternatives-section" aria-labelledby="alternatives-title">
+            <h2 id="alternatives-title">Recommended spots:</h2>
+            <div id="alternative-spots" class="spot-list"></div>
+        </section>
+
+        <section class="lot-picker-section" aria-labelledby="lot-picker-title">
+            <h2 id="lot-picker-title">Want to choose a<br>different parking area?</h2>
+            <select id="lot-picker" aria-label="Choose a parking lot">
+                <option value="">Select Lot</option>
+            </select>
+        </section>
+    </main>
+
+    <div class="feedback-backdrop" hidden>
+        <section class="feedback-modal" role="dialog" aria-modal="true" aria-labelledby="feedback-title">
+            <div class="feedback-intro">
+                <p>optional feedback to better improve your next parking experience :)</p>
+                <button type="button" class="feedback-close" aria-label="Close feedback">x</button>
+            </div>
+            <div class="feedback-question">
+                <h2 id="feedback-title">Did you park in <span class="feedback-lot">this lot</span>?</h2>
+                <div class="feedback-row">
+                    <button type="button" data-feedback="parked-no" class="feedback-orange">No</button>
+                    <button type="button" data-feedback="parked-yes" class="feedback-green">Yes</button>
+                </div>
+            </div>
+            <div class="feedback-question ease-question" hidden>
+                <h2>Was it easy to find a spot?</h2>
+                <div class="feedback-stack">
+                    <button type="button" data-feedback="easy-yes">Yes</button>
+                    <button type="button" data-feedback="easy-somewhat">Somewhat</button>
+                    <button type="button" data-feedback="easy-no">No</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="celebration" aria-hidden="true"></div>
+
+    <script src="home.js"></script>
+</body>
