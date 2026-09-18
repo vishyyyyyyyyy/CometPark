@@ -1,0 +1,53 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMET PARK</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Science+Gothic:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="onboardingstyles.css">
+</head>
+
+
+<body>
+
+    <main class="onboarding-container">
+        <div class="onboarding-header">
+            <h1 class="title">
+                <span class="title-outline">Hey,<br>Comet!</span>
+                <span class="title-fill">Hey,<br>Comet!</span>
+
+            </h1>
+            <p>let’s help you get started and find your next parking spot with 2 quick questions</p>
+        </div>
+        <section class="question question-one" aria-labelledby="question-one-title">
+            <div class="question-banner">
+                <h2 id="question-one-title"><span>1.</span> Which Parking Permit do you currently own?</h2>
+            </div>
+            <div class="choice-list permit-list">
+                <button type="button" class="permit-choice" data-permit="Green">Green</button>
+                <button type="button" class="permit-choice" data-permit="Gold">Gold</button>
+                <button type="button" class="permit-choice" data-permit="Orange">Orange</button>
+                <button type="button" class="permit-choice" data-permit="Res Hall/ APT">Res Hall/ APT</button>
+                <button type="button" class="permit-choice" data-permit="Purple">Purple</button>
+                <button type="button" class="permit-choice" data-permit="Don’t Have">Don’t Have</button>
+            </div>
+             <p>Don’t worry, you can always change this later :)</p>
+        </section>
+
+        <section class="question question-two" aria-labelledby="question-two-title" hidden>
+            <div class="question-banner">
+                <h2 id="question-two-title"><span>2.</span> Where do you usually park?</h2>
+            </div>
+            <div class="choice-list location-list" aria-live="polite"></div>
+            <nav class="onboarding-navigation" aria-label="Onboarding navigation">
+                <button type="button" class="nav-button back-button">← Back</button>
+                <button type="button" class="nav-button next-button">Next →</button>
+            </nav>
+            <p>Don’t worry, you can always change this later :)</p>
+        </section>
+    </main>
+
+    <script src="onboardingscript.js"></script>
+</body>

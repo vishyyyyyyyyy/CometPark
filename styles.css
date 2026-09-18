@@ -140,12 +140,18 @@ body {
 
     color: #fff;
     font-weight: 300;
+    padding-bottom: 20px;
+}
+a{
+    text-decoration: none;
+    width: 100%;
+
 }
 button{
     background-color: var(--utdorange);
     border: none;
     color: var(--white);
-    padding: 10px 20px;
+    padding: 8px 20px;
     font-family: "science gothic", sans-serif;
     font-size: 1.2rem;
     font-weight: 500;
@@ -153,6 +159,12 @@ button{
     border-radius: 0.3rem;
     align-self: center;
     width: 100%;
+}
+
+button:hover{
+    background-color: var(--hoverorange);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.082);
+    top: -3px;
 }
 
 
@@ -251,9 +263,6 @@ button{
         text-align: center;
     }
 
-    button {
-        width: 80%;
-    }
 }
 
 @media (max-width: 500px) {
