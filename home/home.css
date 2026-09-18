@@ -14,7 +14,7 @@
 html,
 body {
 	margin: 0;
-	min-width: 320px;
+	padding: 0;
 	background: var(--home-green);
 }
 
@@ -29,17 +29,72 @@ select {
 	font: inherit;
 }
 
+
+.title {
+	position: relative;
+	left: auto;
+	top: auto;
+	margin: 0;
+	transform: rotate(0deg);
+	font-size: clamp(2rem, 7vw, 2.625rem);
+}
 .home-page {
-	width: min(100%, 601px);
-	min-height: 100vh;
-	margin: 0 auto;
-	background: var(--home-green);
+	background: var(--utdgreen);
 }
 
 .home-header {
-	height: 70px;
-	padding: 3px 13px 0;
-	border-bottom: 10px solid var(--home-orange);
+	position: relative;
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-end;
+	height: 7vw;
+	padding-top: 3%;
+	padding-right: 5%;
+	padding-left: 5%;
+	padding-bottom: 5%;
+	border-bottom: 10px solid var(--utdorange);
+}
+
+.dropdown {
+	position: relative;
+	margin-left: auto;
+}
+
+.dropdown-toggle {
+	border: 0;
+	background: transparent;
+	color: var(--home-orange);
+	font-size: 2.4rem;
+	line-height: 1;
+	cursor: pointer;
+}
+
+.dropdown-menu {
+	position: absolute;
+	right: 0;
+	top: calc(100% + 8px);
+	z-index: 2;
+	min-width: 230px;
+	padding: 20px;
+	border-radius: 0 0 16px 16px;
+	background: var(--home-white);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, .2);
+}
+
+.dropdown-menu[hidden] {
+	display: none;
+}
+
+.preferences-button {
+	width: 100%;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	color: #000;
+	font-size: 1.8rem;
+	font-weight: 700;
+	text-align: left;
+	cursor: pointer;
 }
 
 .brand {
@@ -52,6 +107,7 @@ select {
 
 .arrival-section {
 	padding: 45px 34px 0;
+	margin-bottom: 30px;
 }
 
 .arrival-section h1 {
@@ -63,7 +119,7 @@ select {
 
 .arrival-tabs {
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
+	grid-template-columns: repeat(6, 1fr);
 	align-items: center;
 	margin: 60px -34px 0;
 	padding: 0 18px;
@@ -72,11 +128,11 @@ select {
 
 .arrival-tabs button {
 	min-width: 0;
-	padding: 10px 4px;
+	padding: 7px 3px;
 	border: 0;
 	background: transparent;
 	color: var(--home-white);
-	font-size: clamp(1.65rem, 7vw, 2.625rem);
+	font-size: 2rem;
 	font-weight: 700;
 	cursor: pointer;
 }
@@ -85,17 +141,27 @@ select {
 	border-radius: 11px;
 	background: var(--home-orange);
 	box-shadow: 0 4px 2px rgba(0, 0, 0, .25);
+	transition: background .2s ease-in-out;
+}
+.recommendation-section {
+    position: relative;
+    padding: 0 33px;
+    isolation: isolate;
 }
 
-.recommendation-section {
-	padding: 40px 33px 0;
-	background: linear-gradient(var(--home-orange) 0 100%);
+.recommendation-section::before {
+    content: "";
+    position: absolute;
+    background: var(--utdorange);
+    inset: 50px 0;
+    z-index: -1;
 }
 
 .spot-list {
 	display: flex;
 	flex-direction: column;
 	gap: 17px;
+	align-items: center;
 }
 
 .spot-card {
@@ -108,6 +174,7 @@ select {
 	background: var(--home-white);
 	color: #000;
 	text-align: left;
+	width: 95%;
 }
 
 .spot-card-head {
@@ -119,6 +186,7 @@ select {
 
 .spot-card h3 {
 	margin: 0;
+	width: 80%;
 	font-size: clamp(2rem, 7vw, 2.625rem);
 	line-height: 1;
 }
@@ -126,6 +194,7 @@ select {
 .maps-button {
 	flex: 0 0 auto;
 	padding: 8px 10px;
+	width: 40%;
 	border: 0;
 	border-radius: 6px;
 	background: var(--home-orange);
@@ -168,11 +237,14 @@ select {
 }
 
 .lot-picker-section {
-	padding: 42px 21px 50px;
+	padding: 43px 32px;
+	justify-content: center;
+	align-items: center;
 }
 
 .lot-picker-section select {
-	width: 100%;
+	align-self: center;
+	width: 90%;
 	padding: 10px 15px;
 	border: 7px solid var(--home-orange);
 	border-radius: 33px;
@@ -310,7 +382,12 @@ select {
 
 @media (max-width: 420px) {
 	.arrival-section { padding-inline: 20px; }
-	.arrival-tabs { margin-inline: -20px; padding-inline: 8px; }
+	.arrival-tabs { 
+		margin-inline: -20px; 
+		padding-inline: 8px; 
+		grid-template-columns: repeat(3, 1fr);
+		font-size: .9rem;
+	}
 	.recommendation-section,
 	.alternatives-section { padding-inline: 20px; }
 	.spot-card { padding: 16px; }
