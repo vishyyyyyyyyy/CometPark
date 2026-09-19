@@ -1,7 +1,4 @@
 :root {
-	--home-green: #185844;
-	--home-orange: #e87500;
-	--home-white: #ffffff;
 	--home-yellow: #ffed27;
 	--home-low: #ff633b;
 	--home-high: #4baa4f;
@@ -15,12 +12,12 @@ html,
 body {
 	margin: 0;
 	padding: 0;
-	background: var(--home-green);
+	background: var(--utdgreen);
 }
 
 body {
 	overflow-x: hidden;
-	color: var(--home-white);
+	color: var(--white);
 	font-family: "Science Gothic", sans-serif;
 }
 
@@ -30,7 +27,7 @@ body {
 	z-index: 10;
 	display: grid;
 	place-items: center;
-	background: var(--home-green);
+	background: var(--utdgreen);
 }
 
 .home-loading-content {
@@ -49,7 +46,7 @@ body {
 
 .home-loading-content p {
 	margin: 0;
-	color: var(--home-white);
+	color: var(--white);
 	font-size: 1.4rem;
 }
 
@@ -98,7 +95,7 @@ select {
 	padding: 0;
 	border: 0;
 	background: transparent;
-	color: var(--home-orange);
+	color: var(--utdorange);
 	font-size: 2.4rem;
 	line-height: 1;
 	cursor: pointer;
@@ -132,7 +129,7 @@ select {
 	min-width: 230px;
 	padding: 20px;
 	border-radius: 0 0 16px 16px;
-	background: var(--home-white);
+	background: var(--white);
 	box-shadow: 0 4px 8px rgba(0, 0, 0, .2);
 }
 
@@ -152,11 +149,11 @@ select {
 	cursor: pointer;
 }
 .brand {
-	color: var(--home-white);
+	color: var(--white);
 	font-size: clamp(2rem, 7vw, 2.625rem);
 	font-weight: 700;
 	text-decoration: none;
-	text-shadow: 4px 0 var(--home-orange), -2px 0 var(--home-orange);
+	text-shadow: 4px 0 var(--utdorange), -2px 0 var(--utdorange);
 }
 
 .arrival-section {
@@ -166,7 +163,7 @@ select {
 
 .arrival-section h1 {
 	margin: 0;
-	color: var(--home-orange);
+	color: var(--utdorange);
 	font-size: clamp(2.15rem, 7vw, 2.625rem);
 	line-height: 1.15;
 }
@@ -185,7 +182,7 @@ select {
 	padding: 7px 3px;
 	border: 0;
 	background: transparent;
-	color: var(--home-white);
+	color: var(--white);
 	font-size: 2rem;
 	font-weight: 700;
 	cursor: pointer;
@@ -193,7 +190,7 @@ select {
 
 .arrival-tabs .is-active {
 	border-radius: 11px;
-	background: var(--home-orange);
+	background: var(--utdorange);
 	box-shadow: 0 4px 2px rgba(0, 0, 0, .25);
 	transition: background .2s ease-in-out;
 }
@@ -225,7 +222,7 @@ select {
 	padding: 20px;
 	border: 0;
 	border-radius: 14px;
-	background: var(--home-white);
+	background: var(--white);
 	color: #000;
 	text-align: left;
 	width: 95%;
@@ -251,8 +248,8 @@ select {
 	width: 40%;
 	border: 0;
 	border-radius: 6px;
-	background: var(--home-orange);
-	color: var(--home-white);
+	background: var(--utdorange);
+	color: var(--white);
 	font-size: clamp(.9rem, 3.1vw, 1.16rem);
 	font-weight: 500;
 	cursor: pointer;
@@ -273,7 +270,7 @@ select {
 
 .spot-note {
 	margin: 0;
-	color: var(--home-orange);
+	color: var(--utdorange);
 	font-size: .7rem;
 	font-weight: 500;
 }
@@ -285,7 +282,7 @@ select {
 .alternatives-section h2,
 .lot-picker-section h2 {
 	margin: 0 0 25px;
-	color: var(--home-orange);
+	color: var(--utdorange);
 	font-size: clamp(2rem, 7vw, 2.5rem);
 	line-height: 1.15;
 }
@@ -300,18 +297,18 @@ select {
 	align-self: center;
 	width: 90%;
 	padding: 10px 15px;
-	border: 7px solid var(--home-orange);
+	border: 7px solid var(--utdorange);
 	border-radius: 33px;
 	outline: 0;
-	background: var(--home-green);
-	color: var(--home-white);
+	background: var(--utdgreen);
+	color: var(--white);
 	font-size: clamp(1.3rem, 5vw, 2rem);
 	font-weight: 500;
 }
 
 .lot-picker-section option {
-	color: var(--home-green);
-	background: var(--home-white);
+	color: var(--utdgreen);
+	background: var(--white);
 }
 
 .feedback-backdrop {
@@ -332,8 +329,8 @@ select {
 	overflow-y: auto;
 	padding: 34px 22px;
 	border-radius: 19px;
-	background: var(--home-white);
-	color: var(--home-green);
+	background: var(--white);
+	color: var(--utdgreen);
 }
 
 .feedback-intro {
@@ -353,10 +350,10 @@ select {
 	width: 44px;
 	height: 44px;
 	flex: 0 0 auto;
-	border: 3px solid var(--home-green);
+	border: 3px solid var(--utdgreen);
 	border-radius: 50%;
 	background: transparent;
-	color: var(--home-green);
+	color: var(--utdgreen);
 	font-size: 1.5rem;
 	cursor: pointer;
 }
@@ -367,7 +364,7 @@ select {
 
 .feedback-question h2 {
 	margin: 0 0 16px;
-	color: var(--home-orange);
+	color: var(--utdorange);
 	font-size: clamp(1.8rem, 6vw, 2.2rem);
 	line-height: 1.2;
 }
@@ -386,14 +383,14 @@ select {
 	flex: 1;
 	border: 0;
 	border-radius: 6px;
-	background: var(--home-green);
-	color: var(--home-white);
+	background: var(--utdgreen);
+	color: var(--white);
 	font-size: 1.6rem;
 	font-weight: 500;
 	cursor: pointer;
 }
 
-.feedback-row .feedback-orange { background: var(--home-orange); }
+.feedback-row .feedback-orange { background: var(--utdorange); }
 
 .visually-hidden {
 	position: absolute;
@@ -423,8 +420,8 @@ select {
 	margin: 0;
 	padding: 18px 24px;
 	border-radius: 12px;
-	background: var(--home-white);
-	color: var(--home-green);
+	background: var(--white);
+	color: var(--utdgreen);
 	font-size: clamp(1.3rem, 5vw, 2rem);
 	font-weight: 700;
 	text-align: center;
@@ -435,12 +432,12 @@ select {
 	top: -24px;
 	width: 14px;
 	height: 24px;
-	background: var(--home-orange);
+	background: var(--utdorange);
 	animation: fall 1.6s ease-in forwards;
 }
 
 .celebration span:nth-child(3n) { background: var(--home-yellow); }
-.celebration span:nth-child(4n) { background: var(--home-green); }
+.celebration span:nth-child(4n) { background: var(--utdgreen); }
 
 @keyframes fall {
 	to {
