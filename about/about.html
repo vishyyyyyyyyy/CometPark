@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>COMET PARK | ABOUT</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Science+Gothic:wght@100..900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../styles.css">
+	<link rel="stylesheet" href="about.css">
+</head>
+<body>
+	<main class="about-page">
+    <header class="home-header">
+                <h1 class="title">
+                    <span class="title-outline">CometPark</span>
+                    <span class="title-fill">CometPark</span>
+                </h1>
+                <div class="dropdown">
+                    <button type="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">☰</button>
+                    <div class="dropdown-menu" hidden>
+                        <button type="button" class="preferences-button">Edit Preferences</button>
+                        <button type="button" class="preferences-button learn-more-button">Home</button>
+                    </div>
+                </div>
+            </header>
+
+		<div class="about-content">
+            <div class="about-header">
+                    <h1 class="title">
+                        <span class="title-outline">CometPark</span>
+                        <span class="title-fill">CometPark</span>
+                    </h1>
+                <p class="about-tagline">made for Comets, by Comets &lt;3</p>
+            </div>
+            
+
+			<section class="about-section about-intro">
+				<h2>What is CometPark?</h2>
+				<div class="about-intro-content">
+					<p>CometPark is a student initiative at UT Dallas, <strong>helping commuters find parking spots.</strong></p>
+					<img src="../assets/utd logo.png" alt="The University of Texas at Dallas logo">
+				</div>
+			</section>
+
+			<section class="about-section">
+				<h2>Why was CometPark Developed?</h2>
+				<ol class="reason-list">
+					<li>Unpredicted parking availability</li>
+					<li>Time lost searching for spots</li>
+					<li>Finding alternative spots quickly</li>
+				</ol>
+			</section>
+
+			<section class="about-section how-section">
+				<h2>How it works?</h2>
+				<p>enter your <strong>permit type</strong>, <strong>destination</strong><br>and <strong>arrival time</strong> to find<br>recommended parking areas.</p>
+				<div class="parking-scene" aria-hidden="true">
+					<img src="../assets/temoc1.png" alt="" style="z-index:5;">
+					<span></span>
+				</div>
+			</section>
+
+			<section class="about-section data-section">
+				<h2>Where the data comes from?</h2>
+				<p>Parking availability is collected by checking how full each lot is at different times of day.</p>
+				<p>Students can also submit anonymous feedback about their recent parking experience to help expand data over time.</p>
+			</section>
+
+			<section class="about-section disclaimer-section">
+				<h2>Disclaimer</h2>
+				<p>CometPark's availability <strong>estimates</strong> available spaces. <br> Parking conditions change quickly, so always follow UTD parking rules and use your best judgment when choosing where to park.</p>
+			</section>
+		</div>
+	</main>
+	<script src="about.js"></script>
+</body>
+</html>

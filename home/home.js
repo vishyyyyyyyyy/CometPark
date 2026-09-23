@@ -11,6 +11,7 @@ const celebration = document.querySelector('.celebration');
 const dropdownToggle = document.querySelector('.dropdown-toggle');
 const dropdownMenu = document.querySelector('.dropdown-menu');
 const preferencesButton = document.querySelector('.preferences-button');
+const learnMoreButton = document.querySelector('.learn-more-button');
 const arrivalButtons = document.querySelectorAll('.arrival-tabs button');
 const homeLoading = document.querySelector('.home-loading');
 const homeLoadingImage = document.querySelector('.home-loading-image');
@@ -310,6 +311,10 @@ dropdownToggle.addEventListener('click', () => {
 
 preferencesButton.addEventListener('click', () => {
   window.location.href = '../onboarding/onboarding.html';
+});
+
+learnMoreButton.addEventListener('click', () => {
+  window.location.href = '../about/about.html';
 });
 
 arrivalButtons.forEach((button) => {
