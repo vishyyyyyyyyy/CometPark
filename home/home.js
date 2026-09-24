@@ -327,8 +327,11 @@ arrivalButtons.forEach((button) => {
 });
 
 async function getParkingData() {
+  const controller = new AbortController();
+  const timeoutId = window.setTimeout(() => controller.abort(), 5000);
+
   try {
-    const response = await fetch(pageToScrape);
+    const response = await fetch(pageToScrape, { signal: controller.signal });
 
     if (!response.ok) {
       throw new Error(`HTTP error: ${response.status}`);
@@ -386,8 +389,9 @@ async function getParkingData() {
     }, {});
 
   } catch (error) {
-    console.error("Error getting parking data:", error);
+    console.warn("Parking data unavailable; using local availability estimates.", error);
   } finally {
+    window.clearTimeout(timeoutId);
     renderSpots();
     finishHomeLoading();
   }
